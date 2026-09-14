@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy PEC</title>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABNElEQVR4nGNkwAL4+fn/YxOnFHz8+JERXQxFgFYW43MIE70tR7eLBVlA1qYHr8YTy/wJGr7fzIkoR8QwMPz/+PEjIxNhpbQFTPQMenTAz8//n3EgHcDAgJQIRx0w6oBRB4xYB7AQo0iQh5HhcB8Xiti/fwwMehlfMeQ+f/vPcOb2P4bmpT8ZXn0gXMYR5QAYuPbwH0NY63e8cu4mLAy9aewMDAzsDLlTfxA0k+pRcOjyHwYGBgYGdRnijCYpBLTkmRiuzOJmYGDAHRp2uhAjbz75R30H4IsCmOO+fP/PcPDSX4bW5T+p7wByHUc1ByBHAQMDA4NDyTeGv8SFNE5AcnugvbMVr3xleTVJDhjwgmi0RTTwDsDWXaIXGBz9AphL6G0xzE4mdAF6Ws7AgNY7hgF6ds8ByTVzVrQKe/sAAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Easy PEC">
+<meta name="theme-color" content="#1c1c1c">
+<style>
+  :root {
+    --ink: #ece9e1;
+    --paper: #16181b;
+    --surface: #1e2023;
+    --surface-2: #24262a;
+    --line: #33353a;
+    --accent: #d9b13c;
+    --accent-dark: #b8932a;
+    --shield: #0e0f11;
+    --shield-soft: #1a1c1f;
+    --danger: #e06152;
+    --muted: #9a9d97;
+    --card-shadow: 0 2px 8px rgba(0,0,0,0.28);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 0 0 60px;
+  }
+  header {
+    background: var(--shield);
+    color: var(--ink);
+    padding: 18px 16px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 3px solid var(--accent);
+  }
+  header .titles { flex: 1; min-width: 0; }
+  .header-phone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .header-phone-label {
+    height: 15px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    object-fit: contain;
+  }
+  .header-phone-number {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--accent);
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+  .header-phone:active .header-phone-number { opacity: 0.6; }
+  header img.logo { width: 46px; height: 46px; flex-shrink: 0; border-radius: 11px; box-shadow: 0 2px 6px rgba(0,0,0,0.35); }
+  header .titles h1 {
+    font-size: 1.15rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  header .titles p {
+    margin: 2px 0 0;
+    font-size: 0.72rem;
+    color: #b8bcb4;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 18px 14px 0; }
+  .tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 4px;
+  }
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 9px 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted);
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+  .tab.active { background: var(--accent); color: var(--shield); }
+  .tab-badge {
+    position: absolute;
+    top: -5px;
+    right: 2px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: var(--danger);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .toolbar { display: flex; gap: 8px; margin-bottom: 12px; }
+  input[type="text"] {
+    width: 100%;
+    padding: 13px 14px;
+    font-size: 0.95rem;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--ink);
+    outline: none;
+  }
+  input[type="text"]:focus { border-color: var(--accent); }
+  button {
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  button:active { transform: scale(0.97); }
+  .btn-primary { background: var(--accent); color: var(--shield); }
+  .btn-primary:hover { background: #e8c158; }
+  .btn-secondary { background: var(--surface); color: var(--ink); border: 1.5px solid var(--line); }
+  .btn-ghost { background: transparent; color: var(--muted); padding: 6px 10px; font-weight: 500; font-size: 0.75rem; }
+
+  .count { font-size: 0.78rem; color: var(--muted); margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+  .results { display: flex; flex-direction: column; gap: 10px; }
+  .row {
+    padding: 13px 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+  }
+  .row-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 10px; }
+  .assurance { font-size: 0.96rem; font-weight: 600; line-height: 1.3; color: var(--ink); }
+  .row-icons { display: flex; gap: 2px; flex-shrink: 0; margin-top: -2px; }
+
+  .assist-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 8px 10px;
+  }
+  .badge {
+    width: 36px; height: 36px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; font-weight: 700; color: #fff;
+    flex-shrink: 0; letter-spacing: -0.02em;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.35);
+  }
+  .assist-info { min-width: 0; flex: 1; }
+  .assist-name { font-size: 0.82rem; font-weight: 600; color: var(--ink); line-height: 1.25; }
+  .phone-link {
+    font-size: 0.86rem; color: var(--accent); text-decoration: none; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 4px; margin-top: 1px;
+  }
+  .phone-link::before { content: "📞"; font-size: 0.78rem; }
+  .phone-link:active { opacity: 0.55; }
+  .no-phone { font-size: 0.74rem; color: var(--muted); font-style: italic; margin-top: 1px; display: block; }
+  .icon-btn { background: transparent; border: none; font-size: 0.95rem; padding: 4px 7px; cursor: pointer; color: var(--muted); border-radius: 6px; }
+  .icon-btn:hover { background: rgba(255,255,255,0.08); }
+  .empty { font-size: 0.9rem; color: var(--muted); text-align: center; padding: 30px 0; }
+
+  .add-panel { background: var(--surface); border: 1.5px solid var(--accent); border-radius: 10px; padding: 14px; margin-bottom: 16px; display: none; }
+  .add-panel.open { display: block; }
+  .add-panel .fields { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+  .add-panel label { font-size: 0.72rem; color: var(--muted); margin-bottom: -4px; }
+  .add-panel .actions { display: flex; gap: 8px; justify-content: flex-end; }
+
+  .status-bar { font-size: 0.7rem; color: var(--muted); text-align: center; margin-top: 4px; min-height: 16px; }
+  footer { font-size: 0.7rem; color: var(--muted); text-align: center; margin-top: 24px; padding-bottom: 10px; }
+
+  .tarif-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: var(--card-shadow);
+  }
+  .tarif-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 8px; }
+  .seg {
+    display: flex;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 3px;
+    gap: 3px;
+  }
+  .seg-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 10px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .seg-btn.active { background: var(--accent); color: var(--shield); }
+  .tarif-sub { font-size: 0.72rem; color: var(--muted); margin-top: 6px; min-height: 14px; }
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .checkbox-row input { width: 17px; height: 17px; accent-color: var(--accent); }
+  .tarif-result {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+  .tarif-result-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 4px; }
+  .tarif-result-amount { font-size: 2.3rem; font-weight: 700; color: var(--accent); letter-spacing: -0.01em; }
+  .tarif-result-detail { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+  .tarif-note { font-size: 0.72rem; color: var(--muted); line-height: 1.5; margin-top: 14px; padding: 0 4px; }
+  .discussion-text { font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin: 0 0 12px; }
+  .discussion-name-row { margin-bottom: 12px; }
+  .discussion-name-input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--ink);
+    outline: none;
+  }
+  .discussion-name-input:focus { border-color: var(--accent); }
+  .discussion-msg {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .discussion-msg-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+  .discussion-msg-author { font-size: 0.8rem; font-weight: 700; color: var(--accent); }
+  .discussion-msg-time { font-size: 0.68rem; color: var(--muted); white-space: nowrap; }
+  .discussion-msg-text { font-size: 0.87rem; color: var(--ink); line-height: 1.4; white-space: pre-wrap; word-break: break-word; }
+  .discussion-compose { margin-top: 14px; }
+  .discussion-textarea {
+    width: 100%;
+    min-height: 90px;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface-2);
+    color: var(--ink);
+    outline: none;
+    resize: vertical;
+  }
+  .discussion-textarea:focus { border-color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <img src="data:image/png;base64,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" alt="Easy PEC" class="logo">
+  <div class="titles">
+    <h1>Easy PEC</h1>
+    <p>Assurance → Assistance · Annuaire prestataires</p>
+  </div>
+  <a href="tel:0556364260" class="header-phone">
+    <img class="header-phone-label" src="data:image/jpeg;base64,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" alt="Fereol">
+    <span class="header-phone-number">05 56 36 42 60</span>
+  </a>
+</header>
+
+<div class="wrap">
+  <div class="tabs">
+    <div class="tab active" data-tab="assurances">Assurances</div>
+    <div class="tab" data-tab="assisteurs">Annuaire</div>
+    <div class="tab" data-tab="tarifs">Tarifs & VH</div>
+    <div class="tab" data-tab="discussion">Discussion<span class="tab-badge" id="discussionBadge" style="display:none;"></span></div>
+  </div>
+
+  <!-- ASSURANCES PANEL (lecture seule) -->
+  <div class="panel active" id="panel-assurances">
+    <div class="toolbar">
+      <input type="text" id="searchA" placeholder="Rechercher une assurance..." autocomplete="off">
+    </div>
+    <div class="count"><span id="countA"></span></div>
+    <div class="results" id="resultsA"></div>
+  </div>
+
+  <!-- ASSISTEURS PANEL (lecture seule) -->
+  <div class="panel" id="panel-assisteurs">
+    <div class="toolbar">
+      <input type="text" id="searchB" placeholder="Rechercher un assisteur..." autocomplete="off">
+    </div>
+    <div class="count"><span id="countB"></span></div>
+    <div class="results" id="resultsB"></div>
+  </div>
+
+  <!-- TARIFS & VH PANEL -->
+  <div class="panel" id="panel-tarifs">
+    <div class="tarif-card">
+      <div class="tarif-label">Poids du véhicule (PTAC)</div>
+      <div class="seg" id="segPoids">
+        <button class="seg-btn active" data-val="leger">≤ 1,8 t</button>
+        <button class="seg-btn" data-val="lourd">&gt; 1,8 t à 3,5 t</button>
+      </div>
+
+      <div class="tarif-label" style="margin-top:16px;">Horaire d'appel</div>
+      <div class="seg" id="segHoraire">
+        <button class="seg-btn" data-val="normal">Normal</button>
+        <button class="seg-btn" data-val="majore">Majoré</button>
+      </div>
+
+      <div class="tarif-result">
+        <div class="tarif-result-label">Montant TTC réglementé</div>
+        <div class="tarif-result-amount" id="tarifAmount">— €</div>
+        <div class="tarif-result-detail" id="tarifDetail"></div>
+      </div>
+    </div>
+
+    <div class="tarif-note">
+      Barème national de dépannage-remorquage sur autoroutes et routes express, véhicules légers (PTAC &lt; 3,5 t) — arrêté du 8 décembre 2025, en vigueur depuis le 1<sup>er</sup> janvier 2026. Majoration de 50% applicable du lundi au vendredi de 18h à 8h, ainsi que les samedis, dimanches et jours fériés toute la journée. Tarif basé sur l'heure d'appel de l'automobiliste. À revérifier lors de la publication du prochain arrêté annuel.
+    </div>
+  </div>
+
+  <!-- DISCUSSION PANEL -->
+  <div class="panel" id="panel-discussion">
+    <button class="btn-secondary" id="btnEnableNotif" style="width:100%; margin-bottom:12px; display:none;">🔔 Activer les notifications</button>
+    <div class="discussion-name-row">
+      <input type="text" id="discussionName" class="discussion-name-input" placeholder="Votre prénom" maxlength="30">
+    </div>
+    <div class="results" id="discussionFeed">
+      <div class="empty">Chargement des messages...</div>
+    </div>
+    <div class="discussion-compose">
+      <textarea id="discussionMsg" class="discussion-textarea" placeholder="Signaler une erreur, suggérer une modif..." maxlength="500"></textarea>
+      <button class="btn-primary" id="btnSendFeedback" style="width:100%; margin-top:8px;">Publier</button>
+    </div>
+    <div class="tarif-note">
+      Discussion visible par tous les utilisateurs de l'app. Les modifications de la base elle-même restent centralisées : seule la personne qui gère le fichier peut les appliquer.
+    </div>
+  </div>
+
+  <footer>Base en lecture seule · Pour toute modification, contactez le responsable de l'application</footer>
+</div>
+
+<!-- Firebase (discussion partagée) -->
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+
+<script>
+const SEED = {"assisteurs": [{"key": "ACTA", "label": "ACTA", "phone": "04 72 17 25 49", "initials": "ACT", "color": "#1f7a6c", "key_norm": "ACTA"}, {"key": "MONDIAL", "label": "Mondial Assistance", "phone": "01 40 25 55 55", "initials": "MON", "color": "#c0392b", "key_norm": "MONDIAL"}, {"key": "AXA", "label": "AXA", "phone": "01 55 92 40 00", "initials": "AXA", "color": "#00008f", "key_norm": "AXA"}, {"key": "IMA", "label": "Inter Mutuelles Assistance (IMA)", "phone": "0800 600 600", "initials": "IMA", "color": "#1a3a6b", "key_norm": "IMA"}, {"key": "EUROP", "label": "Europ Assistance", "phone": "01 41 85 84 37", "initials": "EA", "color": "#2c4b9b", "key_norm": "EUROP"}, {"key": "FIDELIA", "label": "Fidelia Assistance", "phone": "01 47 11 12 32", "initials": "FID", "color": "#2e8b3d", "key_norm": "FIDELIA"}, {"key": "MUTUAIDE", "label": "Mutuaide Assistance", "phone": "01 45 16 64 13", "initials": "MUT", "color": "#1c5c40", "key_norm": "MUTUAIDE"}, {"key": "OPTEVEN", "label": "Opteven", "phone": "04 26 73 78 54", "initials": "OPT", "color": "#8a6d3b", "key_norm": "OPTEVEN"}, {"key": "MAPFRE", "label": "Mapfre", "phone": "04 37 37 28 80", "initials": "MAP", "color": "#b3121b", "key_norm": "MAPFRE"}, {"key": "HLPY", "label": "hlpy", "phone": "01 89 31 00 83", "initials": "HLP", "color": "#3fae4a", "key_norm": "HLPY"}, {"key": "SAVE", "label": "SAVE Assistance", "phone": "01 30 62 11 22", "initials": "SAV", "color": "#233a66", "key_norm": "SAVE"}, {"key": "RES", "label": "RES Assistance Service", "phone": "03 88 06 78 88", "initials": "RES", "color": "#3a4d8f", "key_norm": "RES"}, {"key": "TAI", "label": "TAI - Truck Assistance International", "phone": "04 72 60 46 46", "initials": "TAI", "color": "#8b1a1a", "key_norm": "TAI"}, {"key": "FIL", "label": "FIL Assistance", "phone": "01 47 11 24 24", "initials": "FIL", "color": "#146b8c", "key_norm": "FIL"}, {"key": "MERCEDES", "label": "Mercedes-Benz Assistance", "phone": "0800 57 77 77", "initials": "MB", "color": "#1a1a1a", "key_norm": "MERCEDES"}, {"key": "VOLVO", "label": "Volvo Assistance", "phone": "0800 90 75 18", "initials": "VOL", "color": "#00335e", "key_norm": "VOLVO"}, {"key": "ALLIANZ ESPAGNE", "label": "Allianz Global Assistance (Espagne)", "phone": "+34 913255555", "initials": "AL-E", "color": "#003781", "key_norm": "ALLIANZ ESPAGNE"}, {"key": "ALLIANZ BELGIQUE", "label": "Allianz Global Assistance (Belgique)", "phone": "+32 22906411", "initials": "AL-B", "color": "#003781", "key_norm": "ALLIANZ BELGIQUE"}, {"key": "EBTS BELGIQUE", "label": "EBTS Pro Assist (Belgique)", "phone": "+32 11223030", "initials": "EB-B", "color": "#c0392b", "key_norm": "EBTS BELGIQUE"}, {"key": "EBTS FRANCE", "label": "EBTS Pro Assist (France)", "phone": "02 32 96 19 83", "initials": "EB-F", "color": "#c0392b", "key_norm": "EBTS FRANCE"}, {"key": "DAF", "label": "DAF Assistance", "phone": "+31 402143000", "initials": "DAF", "color": "#003da5", "key_norm": "DAF"}, {"key": "SCANIA", "label": "Scania Assistance", "phone": "02 41 41 32 32", "initials": "SCA", "color": "#0a1f44", "key_norm": "SCANIA"}, {"key": "MICHELIN", "label": "Michelin", "phone": "0800 79 79 79", "initials": "MIC", "color": "#1a1a1a", "key_norm": "MICHELIN"}, {"key": "DKV", "label": "DKV Euro Service", "phone": "0800 36 53 65", "initials": "DKV", "color": "#e07b1a", "key_norm": "DKV"}, {"key": "RENAULT ASSISTANCE", "label": "Renault Assistance", "phone": "0800 05 15 15", "initials": "REN", "color": "#f2c500", "key_norm": "RENAULT ASSISTANCE"}, {"key": "CONTINENTAL", "label": "Continental", "phone": "03 44 40 71 62", "initials": "CON", "color": "#e07b1a", "key_norm": "CONTINENTAL"}, {"key": "RENAULT TRUCKS", "label": "Renault Trucks Assistance", "phone": "0800 24 24 10", "initials": "RT", "color": "#f2c500", "key_norm": "RENAULT TRUCKS"}, {"key": "IVECO", "label": "Iveco Assistance", "phone": "0080048326000", "initials": "IVE", "color": "#0a2f5c", "key_norm": "IVECO"}], "entries": [{"id": 1, "assurance": "AA ASSISTANCE", "assurance_norm": "AA ASSISTANCE", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 2, "assurance": "ACM / ASSURANCE CREDIT MUTUEL", "assurance_norm": "ACM ASSURANCE CREDIT MUTUEL", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 4, "assurance": "ACTA ETRANGER", "assurance_norm": "ACTA ETRANGER", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 5, "assurance": "ACTE ASSURANCE", "assurance_norm": "ACTE ASSURANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 7, "assurance": "ADA LOCATION", "assurance_norm": "ADA LOCATION", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 8, "assurance": "ADAC", "assurance_norm": "ADAC", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 9, "assurance": "ADAC Allemagne", "assurance_norm": "ADAC ALLEMAGNE", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 10, "assurance": "AGPM", "assurance_norm": "AGPM", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 11, "assurance": "ALD ASSISTANCE", "assurance_norm": "ALD ASSISTANCE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 12, "assurance": "ALD AUTOMOTIVE", "assurance_norm": "ALD AUTOMOTIVE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 13, "assurance": "ALLIANZ", "assurance_norm": "ALLIANZ", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 14, "assurance": "ALPHABET", "assurance_norm": "ALPHABET", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 15, "assurance": "AMAGUIZ", "assurance_norm": "AMAGUIZ", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 16, "assurance": "AMALINE", "assurance_norm": "AMALINE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 17, "assurance": "AMV", "assurance_norm": "AMV", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 18, "assurance": "ANWB", "assurance_norm": "ANWB", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 19, "assurance": "AON", "assurance_norm": "AON", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 22, "assurance": "AREAS", "assurance_norm": "AREAS", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 23, "assurance": "ARISA", "assurance_norm": "ARISA", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 24, "assurance": "ARVAL", "assurance_norm": "ARVAL", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 25, "assurance": "ARVAL (bis)", "assurance_norm": "ARVAL BIS", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 26, "assurance": "ASSU 2000 / COVEA RISKS", "assurance_norm": "ASSU 2000 COVEA RISKS", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 27, "assurance": "ASSUR PEOPLE", "assurance_norm": "ASSUR PEOPLE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 28, "assurance": "Assurance Gens Du Voyage", "assurance_norm": "ASSURANCE GENS DU VOYAGE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 29, "assurance": "ASSUREO", "assurance_norm": "ASSUREO", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 30, "assurance": "ASSURONE", "assurance_norm": "ASSURONE", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 31, "assurance": "ASSURONLINE", "assurance_norm": "ASSURONLINE", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 33, "assurance": "AUCHAN", "assurance_norm": "AUCHAN", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 34, "assurance": "AUDI ASSURANCE (garantie constructeur)", "assurance_norm": "AUDI ASSURANCE GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 35, "assurance": "AUTOFIRST", "assurance_norm": "AUTOFIRST", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 37, "assurance": "Automobile Club Medical de France (ACMF)", "assurance_norm": "AUTOMOBILE CLUB MEDICAL DE FRANCE ACMF", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 38, "assurance": "AVIS", "assurance_norm": "AVIS", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 39, "assurance": "AVIVA", "assurance_norm": "AVIVA", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 41, "assurance": "AXA ENTREPRISE", "assurance_norm": "AXA ENTREPRISE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 42, "assurance": "Axa Service Technique International", "assurance_norm": "AXA SERVICE TECHNIQUE INTERNATIONAL", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 45, "assurance": "AXERIA", "assurance_norm": "AXERIA", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 46, "assurance": "AXERIA DECLIC AUTO", "assurance_norm": "AXERIA DECLIC AUTO", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 47, "assurance": "BALCIA INSURANCE SE", "assurance_norm": "BALCIA INSURANCE SE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 48, "assurance": "BANQUE POPULAIRE", "assurance_norm": "BANQUE POPULAIRE", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 49, "assurance": "BANQUE POSTALE", "assurance_norm": "BANQUE POSTALE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 50, "assurance": "BESSE ASSURANCE", "assurance_norm": "BESSE ASSURANCE", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 51, "assurance": "BNP PARIBAS", "assurance_norm": "BNP PARIBAS", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 52, "assurance": "BPCE", "assurance_norm": "BPCE", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 53, "assurance": "BRED ASSURANCE", "assurance_norm": "BRED ASSURANCE", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 54, "assurance": "CAISSE D'EPARGNE", "assurance_norm": "CAISSE D EPARGNE", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 55, "assurance": "CAISSE MUTUELLE MARNAISE ASSURANCE", "assurance_norm": "CAISSE MUTUELLE MARNAISE ASSURANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 56, "assurance": "CARDIF", "assurance_norm": "CARDIF", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 57, "assurance": "CARMA", "assurance_norm": "CARMA", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 60, "assurance": "CITROEN ASSURANCE", "assurance_norm": "CITROEN ASSURANCE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 61, "assurance": "COVEA FLEET", "assurance_norm": "COVEA FLEET", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 62, "assurance": "COVEA RISKS", "assurance_norm": "COVEA RISKS", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 63, "assurance": "CUPRA ASSURANCE (garantie constructeur)", "assurance_norm": "CUPRA ASSURANCE GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 64, "assurance": "DAF (garantie constructeur)", "assurance_norm": "DAF GARANTIE CONSTRUCTEUR", "assistance": "DAF", "assistance_norm": "DAF", "maj_hlpy": true}, {"id": 65, "assurance": "DIAC LOCATION", "assurance_norm": "DIAC LOCATION", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 66, "assurance": "DIOT", "assurance_norm": "DIOT", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 67, "assurance": "DIRECT ASSURANCE", "assurance_norm": "DIRECT ASSURANCE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 68, "assurance": "DRIVY LOCATION", "assurance_norm": "DRIVY LOCATION", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 69, "assurance": "ECA ASSURANCE", "assurance_norm": "ECA ASSURANCE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 70, "assurance": "EURALPHA", "assurance_norm": "EURALPHA", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 71, "assurance": "EURO ASSURANCE", "assurance_norm": "EURO ASSURANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 72, "assurance": "EUROFIL", "assurance_norm": "EUROFIL", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 73, "assurance": "EUROMASTER GARANTIE SERENITE +", "assurance_norm": "EUROMASTER GARANTIE SERENITE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 76, "assurance": "EUROPCAR VL", "assurance_norm": "EUROPCAR VL", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 77, "assurance": "EUROPCAR VU", "assurance_norm": "EUROPCAR VU", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 78, "assurance": "FATEC", "assurance_norm": "FATEC", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 79, "assurance": "FBA ASSURANCE", "assurance_norm": "FBA ASSURANCE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 81, "assurance": "FMA RISK", "assurance_norm": "FMA RISK", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 82, "assurance": "FRANCE CAR LOCATION", "assurance_norm": "FRANCE CAR LOCATION", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 83, "assurance": "FRANCE TELECOM", "assurance_norm": "FRANCE TELECOM", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 84, "assurance": "FRANCOIS BERNARD AUTOMOBILES", "assurance_norm": "FRANCOIS BERNARD AUTOMOBILES", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 85, "assurance": "GAN ASSURANCE", "assurance_norm": "GAN ASSURANCE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 86, "assurance": "GAN EUROCOURTAGE", "assurance_norm": "GAN EUROCOURTAGE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 89, "assurance": "GENERAL ELECTRIC FLEET", "assurance_norm": "GENERAL ELECTRIC FLEET", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 90, "assurance": "GENERALI", "assurance_norm": "GENERALI", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 92, "assurance": "GMAC", "assurance_norm": "GMAC", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 93, "assurance": "GMF", "assurance_norm": "GMF", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 94, "assurance": "GROUPAMA", "assurance_norm": "GROUPAMA", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 95, "assurance": "GROUPE CAISSE D'EPARGNE CAR LEASE", "assurance_norm": "GROUPE CAISSE D EPARGNE CAR LEASE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 96, "assurance": "HERTZ ASSISTANCE", "assurance_norm": "HERTZ ASSISTANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 97, "assurance": "ICARE", "assurance_norm": "ICARE", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 98, "assurance": "IDENTICAR", "assurance_norm": "IDENTICAR", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 100, "assurance": "ING", "assurance_norm": "ING", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 101, "assurance": "INTERMARCHE ASSISTANCE", "assurance_norm": "INTERMARCHE ASSISTANCE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 102, "assurance": "IVECO (garantie constructeur)", "assurance_norm": "IVECO GARANTIE CONSTRUCTEUR", "assistance": "IVECO", "assistance_norm": "IVECO", "maj_hlpy": true}, {"id": 103, "assurance": "L'OLIVIER ASSURANCE", "assurance_norm": "L OLIVIER ASSURANCE", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 104, "assurance": "LA BANQUE POSTALE", "assurance_norm": "LA BANQUE POSTALE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 105, "assurance": "LA MEDICALE", "assurance_norm": "LA MEDICALE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 106, "assurance": "LA POSTE ASSURANCE", "assurance_norm": "LA POSTE ASSURANCE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 107, "assurance": "LEASPLAN", "assurance_norm": "LEASPLAN", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 108, "assurance": "LIBEA", "assurance_norm": "LIBEA", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 109, "assurance": "LYBERNET", "assurance_norm": "LYBERNET", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 110, "assurance": "MAAF", "assurance_norm": "MAAF", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 111, "assurance": "MACIF", "assurance_norm": "MACIF", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 112, "assurance": "MACSF", "assurance_norm": "MACSF", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 113, "assurance": "MAIF", "assurance_norm": "MAIF", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 114, "assurance": "MAPA", "assurance_norm": "MAPA", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 116, "assurance": "MATMUT", "assurance_norm": "MATMUT", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 117, "assurance": "MAXANCE / L'EQUITE", "assurance_norm": "MAXANCE L EQUITE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 119, "assurance": "MERCEDES ASSURANCE", "assurance_norm": "MERCEDES ASSURANCE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 120, "assurance": "MERCEDES-BENZ (garantie constructeur)", "assurance_norm": "MERCEDES BENZ GARANTIE CONSTRUCTEUR", "assistance": "MERCEDES", "assistance_norm": "MERCEDES", "maj_hlpy": true}, {"id": 121, "assurance": "MMA", "assurance_norm": "MMA", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 122, "assurance": "MONCEAU ASSURANCE", "assurance_norm": "MONCEAU ASSURANCE", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 125, "assurance": "MUTUELLE DE POITIER", "assurance_norm": "MUTUELLE DE POITIER", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 126, "assurance": "MUTUELLE SAINT CHRISTOPHE", "assurance_norm": "MUTUELLE SAINT CHRISTOPHE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 127, "assurance": "NATIONAL CITER", "assurance_norm": "NATIONAL CITER", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 128, "assurance": "NCI INSURANCE (ANGLAIS)", "assurance_norm": "NCI INSURANCE ANGLAIS", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 129, "assurance": "NETVOX", "assurance_norm": "NETVOX", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 130, "assurance": "NEXX", "assurance_norm": "NEXX", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 132, "assurance": "NOVELIA", "assurance_norm": "NOVELIA", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 134, "assurance": "OPTEVEN GARANTIE", "assurance_norm": "OPTEVEN GARANTIE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 135, "assurance": "OUI CAR LOCATION", "assurance_norm": "OUI CAR LOCATION", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 136, "assurance": "PACIFICA", "assurance_norm": "PACIFICA", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 137, "assurance": "PARCOURS", "assurance_norm": "PARCOURS", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 138, "assurance": "PEUGEOT ASSURANCE", "assurance_norm": "PEUGEOT ASSURANCE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 139, "assurance": "PROGEAS / EURODOMMAGES", "assurance_norm": "PROGEAS EURODOMMAGES", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 140, "assurance": "PROTEC BTP", "assurance_norm": "PROTEC BTP", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 141, "assurance": "QUATTRO ASSURANCE", "assurance_norm": "QUATTRO ASSURANCE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 142, "assurance": "RAC UK", "assurance_norm": "RAC UK", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 143, "assurance": "RENAULT (garantie constructeur)", "assurance_norm": "RENAULT GARANTIE CONSTRUCTEUR", "assistance": "RENAULT ASSISTANCE", "assistance_norm": "RENAULT ASSISTANCE", "maj_hlpy": true}, {"id": 144, "assurance": "RENAULT ASSURANCE AMALINE", "assurance_norm": "RENAULT ASSURANCE AMALINE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 145, "assurance": "RENAULT TRUCKS (garantie constructeur)", "assurance_norm": "RENAULT TRUCKS GARANTIE CONSTRUCTEUR", "assistance": "RENAULT TRUCKS", "assistance_norm": "RENAULT TRUCKS", "maj_hlpy": true}, {"id": 146, "assurance": "Rend And Drop Location", "assurance_norm": "REND AND DROP LOCATION", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 147, "assurance": "RENT ALL", "assurance_norm": "RENT ALL", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 148, "assurance": "RENT@CAR", "assurance_norm": "RENTCAR", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 149, "assurance": "SADA", "assurance_norm": "SADA", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 150, "assurance": "SAGA", "assurance_norm": "SAGA", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 151, "assurance": "SATEC", "assurance_norm": "SATEC", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 153, "assurance": "SCANIA (garantie constructeur)", "assurance_norm": "SCANIA GARANTIE CONSTRUCTEUR", "assistance": "SCANIA", "assistance_norm": "SCANIA", "maj_hlpy": true}, {"id": 154, "assurance": "SEAT ASSURANCE (garantie constructeur)", "assurance_norm": "SEAT ASSURANCE GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 155, "assurance": "SIXT LOCATION", "assurance_norm": "SIXT LOCATION", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 156, "assurance": "SKODA ASSURANCE (garantie constructeur)", "assurance_norm": "SKODA ASSURANCE GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 157, "assurance": "SMA SAGENA", "assurance_norm": "SMA SAGENA", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 158, "assurance": "SMABTP", "assurance_norm": "SMABTP", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 159, "assurance": "SMACL", "assurance_norm": "SMACL", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 160, "assurance": "SOGESSUR", "assurance_norm": "SOGESSUR", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 161, "assurance": "SOLLY AZAR", "assurance_norm": "SOLLY AZAR", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 162, "assurance": "SUPER U", "assurance_norm": "SUPER U", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 163, "assurance": "SURAVENIR", "assurance_norm": "SURAVENIR", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 165, "assurance": "THELEM", "assurance_norm": "THELEM", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 166, "assurance": "THEOREME / SAGENA", "assurance_norm": "THEOREME SAGENA", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 170, "assurance": "TOYOTA ASSURANCE", "assurance_norm": "TOYOTA ASSURANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 171, "assurance": "U CAR ASSISTANCE", "assurance_norm": "U CAR ASSISTANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 173, "assurance": "VERSPIEREN", "assurance_norm": "VERSPIEREN", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 174, "assurance": "VOLKSWAGEN ASSURANCE (garantie constructeur)", "assurance_norm": "VOLKSWAGEN ASSURANCE GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 175, "assurance": "VOLKSWAGEN UTILITAIRES (garantie constructeur)", "assurance_norm": "VOLKSWAGEN UTILITAIRES GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 176, "assurance": "VOLVO (garantie constructeur)", "assurance_norm": "VOLVO GARANTIE CONSTRUCTEUR", "assistance": "VOLVO", "assistance_norm": "VOLVO", "maj_hlpy": true}, {"id": 178, "assurance": "WECOVER", "assurance_norm": "WECOVER", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 179, "assurance": "XENASSUR", "assurance_norm": "XENASSUR", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 180, "assurance": "XYLASSUR", "assurance_norm": "XYLASSUR", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 181, "assurance": "YOU ASSUR", "assurance_norm": "YOU ASSUR", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 182, "assurance": "ZEPHIR", "assurance_norm": "ZEPHIR", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}]};
+const KEY_ENTRIES = 'fereol_assurance_entries';
+const KEY_ASSISTEURS = 'fereol_assisteurs';
+
+let entries = [];
+let assisteurs = [];
+
+function normalize(str) {
+  return (str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+}
+function escapeHtml(str) {
+  const d = document.createElement('div'); d.textContent = str; return d.innerHTML;
+}
+function telHref(phone) {
+  return 'tel:' + phone.replace(/[^\d+]/g, '');
+}
+
+function loadData() {
+  entries = SEED.entries.slice();
+  assisteurs = SEED.assisteurs.slice();
+  sortAll();
+}
+
+function sortAll() {
+  entries.sort((x, y) => x.assurance.toUpperCase().localeCompare(y.assurance.toUpperCase()));
+  assisteurs.sort((x, y) => x.label.toUpperCase().localeCompare(y.label.toUpperCase()));
+}
+
+function findAssisteur(assistanceValue) {
+  const n = normalize(assistanceValue);
+  return assisteurs.find(a => normalize(a.key) === n) || null;
+}
+
+// ---------------- TABS ----------------
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    if (tab.dataset.tab === 'discussion') markDiscussionAsRead();
+  });
+});
+
+// ---------------- ASSURANCES PANEL (lecture seule) ----------------
+const searchA = document.getElementById('searchA');
+const resultsA = document.getElementById('resultsA');
+const countA = document.getElementById('countA');
+
+function searchEntries(q) {
+  const n = normalize(q.trim());
+  if (!n) return entries;
+  const starts = [];
+  const contains = [];
+  entries.forEach(e => {
+    const an = normalize(e.assurance);
+    if (an.startsWith(n)) starts.push(e);
+    else if (an.includes(n) || normalize(e.assistance).includes(n)) contains.push(e);
+  });
+  return starts.concat(contains);
+}
+
+function renderA(list) {
+  resultsA.innerHTML = '';
+  countA.textContent = list.length + ' résultat' + (list.length !== 1 ? 's' : '') + (searchA.value.trim() === '' ? ' (tous)' : '');
+  if (list.length === 0) { resultsA.innerHTML = '<div class="empty">Aucune entrée trouvée.</div>'; return; }
+  const frag = document.createDocumentFragment();
+  list.forEach(item => {
+    const row = document.createElement('div');
+    row.className = 'row';
+    const ass = findAssisteur(item.assistance);
+
+    const badgeColor = ass ? ass.color : '#9a978a';
+    const badgeText = ass ? ass.initials : item.assistance.slice(0,3).toUpperCase();
+    const assistLabel = ass ? ass.label : item.assistance;
+    const phoneHtml = ass && ass.phone
+      ? `<a class="phone-link" href="${telHref(ass.phone)}">${escapeHtml(ass.phone)}</a>`
+      : `<span class="no-phone">n° à ajouter</span>`;
+    row.innerHTML = `
+      <div class="row-top">
+        <div class="assurance">${escapeHtml(item.assurance)}</div>
+      </div>
+      <div class="assist-chip">
+        <div class="badge" style="background:${badgeColor}">${badgeText}</div>
+        <div class="assist-info">
+          <div class="assist-name">${escapeHtml(assistLabel)}</div>
+          ${phoneHtml}
+        </div>
+      </div>`;
+    frag.appendChild(row);
+  });
+  resultsA.appendChild(frag);
+}
+
+searchA.addEventListener('input', () => renderA(searchEntries(searchA.value)));
+
+// ---------------- ASSISTEURS PANEL (lecture seule) ----------------
+const searchB = document.getElementById('searchB');
+const resultsB = document.getElementById('resultsB');
+const countB = document.getElementById('countB');
+
+function searchAssisteurs(q) {
+  const n = normalize(q.trim());
+  if (!n) return assisteurs;
+  const starts = [];
+  const contains = [];
+  assisteurs.forEach(a => {
+    const ln = normalize(a.label);
+    if (ln.startsWith(n)) starts.push(a);
+    else if (ln.includes(n) || normalize(a.key).includes(n) || (a.phone||'').includes(q.trim())) contains.push(a);
+  });
+  return starts.concat(contains);
+}
+
+function renderB(list) {
+  resultsB.innerHTML = '';
+  countB.textContent = list.length + ' assisteur' + (list.length !== 1 ? 's' : '') + (searchB.value.trim() === '' ? ' (tous)' : '');
+  if (list.length === 0) { resultsB.innerHTML = '<div class="empty">Aucun assisteur trouvé.</div>'; return; }
+  const frag = document.createDocumentFragment();
+  list.forEach(item => {
+    const row = document.createElement('div');
+    row.className = 'row';
+    const phoneHtml = item.phone
+      ? `<a class="phone-link" href="${telHref(item.phone)}">${escapeHtml(item.phone)}</a>`
+      : `<span class="no-phone">n° à ajouter</span>`;
+    row.innerHTML = `
+      <div class="row-top">
+        <div class="assurance">${escapeHtml(item.label)}</div>
+      </div>
+      <div class="assist-chip">
+        <div class="badge" style="background:${item.color || '#9a978a'}">${escapeHtml(item.initials || item.key.slice(0,3))}</div>
+        <div class="assist-info">
+          ${phoneHtml}
+        </div>
+      </div>`;
+    frag.appendChild(row);
+  });
+  resultsB.appendChild(frag);
+}
+
+searchB.addEventListener('input', () => renderB(searchAssisteurs(searchB.value)));
+
+// ---------------- TARIFS & VH ----------------
+// Barème national dépannage-remorquage autoroute (arrêté du 8 décembre 2025, en vigueur 1er janvier 2026)
+const TARIFS = {
+  leger: { normal: 151.00, majore: 226.50 },
+  lourd: { normal: 186.72, majore: 280.08 }
+};
+
+let tarifState = { poids: 'leger', horaire: 'normal' };
+
+const segPoids = document.getElementById('segPoids');
+const segHoraire = document.getElementById('segHoraire');
+const tarifAmount = document.getElementById('tarifAmount');
+const tarifDetail = document.getElementById('tarifDetail');
+
+function computeAutoHoraire() {
+  const now = new Date();
+  const day = now.getDay(); // 0 = dimanche, 6 = samedi
+  const hour = now.getHours();
+  const isWeekend = (day === 0 || day === 6);
+  const isNightHours = (hour < 8 || hour >= 18);
+  return (isWeekend || isNightHours) ? 'majore' : 'normal';
+}
+
+function setSeg(container, value) {
+  container.querySelectorAll('.seg-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.val === value);
+  });
+}
+
+function renderTarif() {
+  setSeg(segPoids, tarifState.poids);
+  setSeg(segHoraire, tarifState.horaire);
+
+  const montant = TARIFS[tarifState.poids][tarifState.horaire];
+  tarifAmount.textContent = montant.toFixed(2).replace('.', ',') + ' €';
+
+  const poidsLabel = tarifState.poids === 'leger' ? '≤ 1,8 t' : '> 1,8 t à 3,5 t';
+  const horaireLabel = tarifState.horaire === 'majore' ? 'majoré (+50%)' : 'normal (lun-ven 8h-18h)';
+  tarifDetail.textContent = poidsLabel + ' · tarif ' + horaireLabel;
+}
+
+segPoids.addEventListener('click', (e) => {
+  const btn = e.target.closest('.seg-btn');
+  if (!btn) return;
+  tarifState.poids = btn.dataset.val;
+  renderTarif();
+});
+
+segHoraire.addEventListener('click', (e) => {
+  const btn = e.target.closest('.seg-btn');
+  if (!btn) return;
+  tarifState.horaire = btn.dataset.val;
+  renderTarif();
+});
+
+// Auto-detect current time slot on load (still editable manually above)
+tarifState.horaire = computeAutoHoraire();
+
+// ---------------- DISCUSSION (Firebase Firestore, partagée en temps réel) ----------------
+const firebaseConfig = {
+  apiKey: "AIzaSyDDDUr_1tlm3gIlSbGKDYgPkUKrRLZYUvQ",
+  authDomain: "easy-pec-636f3.firebaseapp.com",
+  projectId: "easy-pec-636f3",
+  storageBucket: "easy-pec-636f3.firebasestorage.app",
+  messagingSenderId: "1088020245357",
+  appId: "1:1088020245357:web:b6c9e335741b749d83c864"
+};
+
+let db = null;
+try {
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.firestore();
+} catch (err) {
+  console.error('Firebase init error:', err);
+}
+
+const discussionFeed = document.getElementById('discussionFeed');
+const discussionName = document.getElementById('discussionName');
+const discussionMsg = document.getElementById('discussionMsg');
+const NAME_KEY = 'easypec_discussion_name';
+
+// remember the person's name locally so they don't retype it each time
+try {
+  const savedName = localStorage.getItem(NAME_KEY);
+  if (savedName) discussionName.value = savedName;
+} catch (err) {}
+
+function timeAgo(date) {
+  const diffMs = Date.now() - date.getTime();
+  const mins = Math.floor(diffMs / 60000);
+  if (mins < 1) return 'à l\'instant';
+  if (mins < 60) return mins + ' min';
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return hrs + ' h';
+  const days = Math.floor(hrs / 24);
+  if (days < 7) return days + ' j';
+  return date.toLocaleDateString('fr-FR');
+}
+
+function renderMessages(docs) {
+  if (docs.length === 0) {
+    discussionFeed.innerHTML = '<div class="empty">Aucun message pour l\'instant. Soyez le premier à écrire !</div>';
+    return;
+  }
+  const frag = document.createDocumentFragment();
+  docs.forEach(doc => {
+    const data = doc.data();
+    const date = data.createdAt && data.createdAt.toDate ? data.createdAt.toDate() : new Date();
+    const el = document.createElement('div');
+    el.className = 'discussion-msg';
+    el.innerHTML = `
+      <div class="discussion-msg-top">
+        <span class="discussion-msg-author">${escapeHtml(data.author || 'Anonyme')}</span>
+        <span class="discussion-msg-time">${timeAgo(date)}</span>
+      </div>
+      <div class="discussion-msg-text">${escapeHtml(data.text || '')}</div>`;
+    frag.appendChild(el);
+  });
+  discussionFeed.innerHTML = '';
+  discussionFeed.appendChild(frag);
+}
+
+// ---------------- Unread badge + notifications ----------------
+const LASTSEEN_KEY = 'easypec_discussion_lastseen';
+let lastSeenTs = 0;
+try { lastSeenTs = parseInt(localStorage.getItem(LASTSEEN_KEY) || '0', 10) || 0; } catch (err) {}
+let discussionLoadedOnce = false;
+
+function isDiscussionTabActive() {
+  const p = document.getElementById('panel-discussion');
+  return p && p.classList.contains('active');
+}
+
+function updateBadge(count) {
+  const badge = document.getElementById('discussionBadge');
+  if (!badge) return;
+  if (count > 0) {
+    badge.textContent = count > 99 ? '99+' : String(count);
+    badge.style.display = 'flex';
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+function markDiscussionAsRead() {
+  lastSeenTs = Date.now();
+  try { localStorage.setItem(LASTSEEN_KEY, String(lastSeenTs)); } catch (err) {}
+  updateBadge(0);
+}
+
+function maybeNotify(author, text) {
+  if (!('Notification' in window)) return;
+  if (Notification.permission !== 'granted') return;
+  if (isDiscussionTabActive() && document.visibilityState === 'visible') return;
+  try {
+    new Notification((author || 'Anonyme') + ' • Easy PEC', { body: text, tag: 'easypec-discussion' });
+  } catch (err) { console.error('Notification error:', err); }
+}
+
+const btnEnableNotif = document.getElementById('btnEnableNotif');
+if ('Notification' in window) {
+  if (Notification.permission === 'default') {
+    btnEnableNotif.style.display = 'block';
+  }
+  btnEnableNotif.addEventListener('click', () => {
+    Notification.requestPermission().then(perm => {
+      btnEnableNotif.style.display = 'none';
+      if (perm === 'granted') {
+        try { new Notification('Notifications activées', { body: 'Vous recevrez les nouveaux messages de la discussion.' }); } catch (err) {}
+      }
+    });
+  });
+} else {
+  btnEnableNotif.style.display = 'none';
+}
+
+if (db) {
+  db.collection('messages').orderBy('createdAt', 'desc').limit(100)
+    .onSnapshot(
+      snap => {
+        renderMessages(snap.docs);
+
+        let unread = 0;
+        snap.docs.forEach(doc => {
+          const d = doc.data();
+          const t = (d.createdAt && d.createdAt.toDate) ? d.createdAt.toDate().getTime() : 0;
+          if (t > lastSeenTs) unread++;
+        });
+
+        if (isDiscussionTabActive()) {
+          markDiscussionAsRead();
+        } else {
+          updateBadge(unread);
+        }
+
+        if (discussionLoadedOnce) {
+          snap.docChanges().forEach(change => {
+            if (change.type === 'added') {
+              const d = change.doc.data();
+              maybeNotify(d.author, d.text);
+            }
+          });
+        }
+        discussionLoadedOnce = true;
+      },
+      err => {
+        console.error('Firestore read error:', err);
+        discussionFeed.innerHTML = '<div class="empty">Impossible de charger la discussion pour le moment.</div>';
+      }
+    );
+} else {
+  discussionFeed.innerHTML = '<div class="empty">Discussion indisponible.</div>';
+}
+
+document.getElementById('btnSendFeedback').addEventListener('click', () => {
+  const text = discussionMsg.value.trim();
+  const author = discussionName.value.trim() || 'Anonyme';
+  if (!text) { alert('Écrivez votre message avant de publier.'); return; }
+  if (!db) { alert('Discussion indisponible pour le moment.'); return; }
+  try { localStorage.setItem(NAME_KEY, author); } catch (err) {}
+  db.collection('messages').add({
+    author: author,
+    text: text,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }).then(() => {
+    discussionMsg.value = '';
+  }).catch(err => {
+    console.error('Firestore write error:', err);
+    alert('Échec de l\'envoi. Vérifiez votre connexion.');
+  });
+});
+
+// ---------------- INIT ----------------
+loadData();
+renderTarif();
+renderA(entries);
+renderB(assisteurs);
+</script>
+</body>
+</html>
