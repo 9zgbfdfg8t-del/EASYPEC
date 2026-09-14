@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fereol Dépannage — Assurance / Assistance</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjIwIj4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIyMCIgcng9IjMwIiBmaWxsPSIjMTQxNDE0Ii8+CiAgPHJlY3QgeD0iMjQiIHk9IjI0IiB3aWR0aD0iNTAuNiIgaGVpZ2h0PSIxOCIgZmlsbD0iIzJjNGI5YiIvPgogIDxyZWN0IHg9Ijc0LjYiIHk9IjI0IiB3aWR0aD0iNTAuNiIgaGVpZ2h0PSIxOCIgZmlsbD0iI2Y0ZjFlYSIvPgogIDxyZWN0IHg9IjEyNS4yIiB5PSIyNCIgd2lkdGg9IjUwLjYiIGhlaWdodD0iMTgiIGZpbGw9IiNiMzI3MmMiLz4KICA8cGF0aCBkPSJNNTUgNTYgTDE0NSA1NiBMMTQ1IDEyOCBMMTAwIDE5MCBMNTUgMTI4IFoiIGZpbGw9IiMyYTJhMmEiIHN0cm9rZT0iI2M5YTIyNyIgc3Ryb2tlLXdpZHRoPSI2Ii8+CiAgPHRleHQgeD0iMTAwIiB5PSIxMjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjU4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2UzYTkxYSI+RkQ8L3RleHQ+Cjwvc3ZnPgo=">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABo0lEQVR4nO1Xu04CQRQ9MzxcKkncgtia2JhYameBBYXFxspWfoHC2BEKH5W/oDb8gQUWkFhZWtjaGx0TsCALy7IWZHUd5sUusA2n2eydmXvO3Lmzdy+BALZtByJ7UjDGCG/7Z1gUsUoIXTY5z5WNGkr7V8qFz01H67yzVzYSUQUCxhih+qmLBV1m6HnYth2kHgEii8DDzcZciY5qX0K7MALzJlf5TP0IsroJ1etMIoLbc185nnoEVgJWAlIXoL2GURzuDnF23P99v2tbOC27GI2Bzx5F88nC40t+JgHaCPD32PUIKo0iKo0iPnoUrkfgXBRx37ZQc/rY3vSla2MJ4B1ZuQCtehetehdruYltNAY6r3m4Q4Ktkm9MLhUgKhyhw2gEBt5kLEuBgx0PVj7A23tGSC4rRtJqCEwXkELGQyEYwLlcB/CXE/4YYN+THDipTH+6ZeRaASIRgLo+8LtXkQMGOaA6jqTkRgJMRcQhNxagE2Ga8SJoc4CHyd+S6e4BgIrapSTOZyGP3RfISGYhD0FDJXFF8E9ThJypN6fCnS+zPf8BYgWv7gsTkWIAAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Fereol Assist">
+<meta name="theme-color" content="#1c1c1c">
+<style>
+  :root {
+    --ink: #1c2320;
+    --paper: #f4f1ea;
+    --line: #ddd7c8;
+    --accent: #c9a227;
+    --accent-dark: #a5821c;
+    --shield: #1c1c1c;
+    --shield-soft: #2a2a2a;
+    --danger: #b3272c;
+    --muted: #7c8079;
+    --card-shadow: 0 1px 3px rgba(28,35,32,0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 0 0 60px;
+  }
+  header {
+    background: var(--shield);
+    color: var(--paper);
+    padding: 18px 16px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 3px solid var(--accent);
+  }
+  header img.logo { width: 46px; height: 46px; flex-shrink: 0; border-radius: 11px; box-shadow: 0 2px 6px rgba(0,0,0,0.35); }
+  header .titles h1 {
+    font-size: 1.15rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  header .titles p {
+    margin: 2px 0 0;
+    font-size: 0.72rem;
+    color: #b8bcb4;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 18px 14px 0; }
+  .tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 4px;
+  }
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 9px 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted);
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .tab.active { background: var(--shield); color: var(--paper); }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .toolbar { display: flex; gap: 8px; margin-bottom: 12px; }
+  input[type="text"] {
+    width: 100%;
+    padding: 13px 14px;
+    font-size: 0.95rem;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ink);
+    outline: none;
+  }
+  input[type="text"]:focus { border-color: var(--accent); }
+  button {
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  button:active { transform: scale(0.97); }
+  .btn-primary { background: var(--shield); color: var(--paper); }
+  .btn-secondary { background: #fff; color: var(--ink); border: 1.5px solid var(--line); }
+  .btn-ghost { background: transparent; color: var(--muted); padding: 6px 10px; font-weight: 500; font-size: 0.75rem; }
+
+  .count { font-size: 0.78rem; color: var(--muted); margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+  .results { display: flex; flex-direction: column; gap: 10px; }
+  .row {
+    padding: 13px 14px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+  }
+  .row-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 10px; }
+  .assurance { font-size: 0.96rem; font-weight: 600; line-height: 1.3; color: var(--ink); }
+  .row-icons { display: flex; gap: 2px; flex-shrink: 0; margin-top: -2px; }
+
+  .assist-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #faf8f2;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 8px 10px;
+  }
+  .badge {
+    width: 36px; height: 36px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; font-weight: 700; color: #fff;
+    flex-shrink: 0; letter-spacing: -0.02em;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  }
+  .assist-info { min-width: 0; flex: 1; }
+  .assist-name { font-size: 0.82rem; font-weight: 600; color: var(--ink); line-height: 1.25; }
+  .phone-link {
+    font-size: 0.86rem; color: var(--shield); text-decoration: none; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 4px; margin-top: 1px;
+  }
+  .phone-link::before { content: "📞"; font-size: 0.78rem; }
+  .phone-link:active { opacity: 0.55; }
+  .no-phone { font-size: 0.74rem; color: var(--muted); font-style: italic; margin-top: 1px; display: block; }
+  .icon-btn { background: transparent; border: none; font-size: 0.95rem; padding: 4px 7px; cursor: pointer; color: var(--muted); border-radius: 6px; }
+  .icon-btn:hover { background: rgba(0,0,0,0.05); }
+  .empty { font-size: 0.9rem; color: var(--muted); text-align: center; padding: 30px 0; }
+
+  .edit-form { display: flex; flex-direction: column; gap: 8px; }
+  .edit-fields { display: flex; gap: 8px; }
+  .edit-fields input { flex: 1; padding: 8px 10px; font-size: 0.85rem; }
+  .edit-actions { display: flex; gap: 6px; justify-content: flex-end; }
+  .edit-actions button { padding: 6px 12px; font-size: 0.76rem; }
+
+  .add-panel { background: #fff; border: 1.5px solid var(--accent); border-radius: 10px; padding: 14px; margin-bottom: 16px; display: none; }
+  .add-panel.open { display: block; }
+  .add-panel .fields { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+  .add-panel label { font-size: 0.72rem; color: var(--muted); margin-bottom: -4px; }
+  .add-panel .actions { display: flex; gap: 8px; justify-content: flex-end; }
+
+  .status-bar { font-size: 0.7rem; color: var(--muted); text-align: center; margin-top: 4px; min-height: 16px; }
+  footer { font-size: 0.7rem; color: var(--muted); text-align: center; margin-top: 24px; padding-bottom: 10px; }
+</style>
+</head>
+<body>
+<header>
+  <img src="data:image/png;base64,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" alt="Fereol Dépannage" class="logo">
+  <div class="titles">
+    <h1>Fereol Dépannage</h1>
+    <p>Assurance → Assistance · Annuaire prestataires</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="tabs">
+    <div class="tab active" data-tab="assurances">Assurances</div>
+    <div class="tab" data-tab="assisteurs">Annuaire assisteurs</div>
+  </div>
+
+  <!-- ASSURANCES PANEL -->
+  <div class="panel active" id="panel-assurances">
+    <div class="toolbar">
+      <input type="text" id="searchA" placeholder="Rechercher une assurance..." autocomplete="off">
+      <button class="btn-primary" id="btnToggleAddA">+</button>
+    </div>
+    <div class="add-panel" id="addPanelA">
+      <div class="fields">
+        <div><label>Nom de l'assurance</label><input type="text" id="newAssurance" placeholder="Ex : NOUVELLE ASSURANCE"></div>
+        <div><label>Assisteur (nom court, ex : MONDIAL, AXA, HLPY...)</label><input type="text" id="newAssistance" placeholder="Ex : MONDIAL"></div>
+      </div>
+      <div class="actions">
+        <button class="btn-secondary" id="btnCancelAddA">Annuler</button>
+        <button class="btn-primary" id="btnSaveAddA">Enregistrer</button>
+      </div>
+    </div>
+    <div class="count"><span id="countA"></span><button class="btn-ghost" id="btnResetA">Réinitialiser</button></div>
+    <div class="results" id="resultsA"></div>
+    <div class="status-bar" id="statusA"></div>
+  </div>
+
+  <!-- ASSISTEURS PANEL -->
+  <div class="panel" id="panel-assisteurs">
+    <div class="toolbar">
+      <input type="text" id="searchB" placeholder="Rechercher un assisteur..." autocomplete="off">
+      <button class="btn-primary" id="btnToggleAddB">+</button>
+    </div>
+    <div class="add-panel" id="addPanelB">
+      <div class="fields">
+        <div><label>Nom affiché</label><input type="text" id="newLabel" placeholder="Ex : Nouvel assisteur"></div>
+        <div><label>Clé courte (utilisée dans le tableau Assurances)</label><input type="text" id="newKey" placeholder="Ex : NOUVEL"></div>
+        <div><label>Téléphone</label><input type="text" id="newPhone" placeholder="Ex : 01 23 45 67 89"></div>
+      </div>
+      <div class="actions">
+        <button class="btn-secondary" id="btnCancelAddB">Annuler</button>
+        <button class="btn-primary" id="btnSaveAddB">Enregistrer</button>
+      </div>
+    </div>
+    <div class="count"><span id="countB"></span><button class="btn-ghost" id="btnResetB">Réinitialiser</button></div>
+    <div class="results" id="resultsB"></div>
+    <div class="status-bar" id="statusB"></div>
+  </div>
+
+  <footer>Données stockées localement dans ce navigateur · Vérifiez les affectations et numéros critiques avant usage opérationnel</footer>
+</div>
+
+<script>
+const SEED = {"assisteurs": [{"key": "ACTA", "label": "ACTA", "phone": "04 72 17 25 49", "initials": "ACT", "color": "#1f7a6c", "key_norm": "ACTA"}, {"key": "MONDIAL", "label": "Mondial Assistance", "phone": "01 40 25 55 55", "initials": "MON", "color": "#c0392b", "key_norm": "MONDIAL"}, {"key": "AXA", "label": "AXA", "phone": "01 55 92 40 00", "initials": "AXA", "color": "#00008f", "key_norm": "AXA"}, {"key": "IMA", "label": "Inter Mutuelles Assistance (IMA)", "phone": "0800 600 600", "initials": "IMA", "color": "#1a3a6b", "key_norm": "IMA"}, {"key": "EUROP", "label": "Europ Assistance", "phone": "01 41 85 84 37", "initials": "EA", "color": "#2c4b9b", "key_norm": "EUROP"}, {"key": "FIDELIA", "label": "Fidelia Assistance", "phone": "01 47 11 12 32", "initials": "FID", "color": "#2e8b3d", "key_norm": "FIDELIA"}, {"key": "MUTUAIDE", "label": "Mutuaide Assistance", "phone": "01 45 16 64 13", "initials": "MUT", "color": "#1c5c40", "key_norm": "MUTUAIDE"}, {"key": "OPTEVEN", "label": "Opteven", "phone": "04 26 73 78 54", "initials": "OPT", "color": "#8a6d3b", "key_norm": "OPTEVEN"}, {"key": "MAPFRE", "label": "Mapfre", "phone": "04 37 37 28 80", "initials": "MAP", "color": "#b3121b", "key_norm": "MAPFRE"}, {"key": "HLPY", "label": "hlpy", "phone": "01 89 31 00 83", "initials": "HLP", "color": "#3fae4a", "key_norm": "HLPY"}, {"key": "SAVE", "label": "SAVE Assistance", "phone": "01 30 62 11 22", "initials": "SAV", "color": "#233a66", "key_norm": "SAVE"}, {"key": "RES", "label": "RES Assistance Service", "phone": "03 88 06 78 88", "initials": "RES", "color": "#3a4d8f", "key_norm": "RES"}, {"key": "TAI", "label": "TAI - Truck Assistance International", "phone": "04 72 60 46 46", "initials": "TAI", "color": "#8b1a1a", "key_norm": "TAI"}, {"key": "FIL", "label": "FIL Assistance", "phone": "01 47 11 24 24", "initials": "FIL", "color": "#146b8c", "key_norm": "FIL"}, {"key": "MERCEDES", "label": "Mercedes-Benz Assistance", "phone": "0800 57 77 77", "initials": "MB", "color": "#1a1a1a", "key_norm": "MERCEDES"}, {"key": "VOLVO", "label": "Volvo Assistance", "phone": "0800 90 75 18", "initials": "VOL", "color": "#00335e", "key_norm": "VOLVO"}, {"key": "ALLIANZ ESPAGNE", "label": "Allianz Global Assistance (Espagne)", "phone": "+34 913255555", "initials": "AL-E", "color": "#003781", "key_norm": "ALLIANZ ESPAGNE"}, {"key": "ALLIANZ BELGIQUE", "label": "Allianz Global Assistance (Belgique)", "phone": "+32 22906411", "initials": "AL-B", "color": "#003781", "key_norm": "ALLIANZ BELGIQUE"}, {"key": "EBTS BELGIQUE", "label": "EBTS Pro Assist (Belgique)", "phone": "+32 11223030", "initials": "EB-B", "color": "#c0392b", "key_norm": "EBTS BELGIQUE"}, {"key": "EBTS FRANCE", "label": "EBTS Pro Assist (France)", "phone": "02 32 96 19 83", "initials": "EB-F", "color": "#c0392b", "key_norm": "EBTS FRANCE"}, {"key": "DAF", "label": "DAF Assistance", "phone": "+31 402143000", "initials": "DAF", "color": "#003da5", "key_norm": "DAF"}, {"key": "SCANIA", "label": "Scania Assistance", "phone": "02 41 41 32 32", "initials": "SCA", "color": "#0a1f44", "key_norm": "SCANIA"}, {"key": "MICHELIN", "label": "Michelin", "phone": "0800 79 79 79", "initials": "MIC", "color": "#1a1a1a", "key_norm": "MICHELIN"}, {"key": "DKV", "label": "DKV Euro Service", "phone": "0800 36 53 65", "initials": "DKV", "color": "#e07b1a", "key_norm": "DKV"}, {"key": "RENAULT ASSISTANCE", "label": "Renault Assistance", "phone": "0800 05 15 15", "initials": "REN", "color": "#f2c500", "key_norm": "RENAULT ASSISTANCE"}, {"key": "CONTINENTAL", "label": "Continental", "phone": "03 44 40 71 62", "initials": "CON", "color": "#e07b1a", "key_norm": "CONTINENTAL"}, {"key": "RENAULT TRUCKS", "label": "Renault Trucks Assistance", "phone": "0800 24 24 10", "initials": "RT", "color": "#f2c500", "key_norm": "RENAULT TRUCKS"}, {"key": "IVECO", "label": "Iveco Assistance", "phone": "0080048326000", "initials": "IVE", "color": "#0a2f5c", "key_norm": "IVECO"}], "entries": [{"id": 1, "assurance": "AA ASSISTANCE", "assurance_norm": "AA ASSISTANCE", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 2, "assurance": "ACM / ASSURANCE CREDIT MUTUEL", "assurance_norm": "ACM ASSURANCE CREDIT MUTUEL", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 3, "assurance": "ACTA", "assurance_norm": "ACTA", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 4, "assurance": "ACTA ETRANGER", "assurance_norm": "ACTA ETRANGER", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 5, "assurance": "ACTE ASSURANCE", "assurance_norm": "ACTE ASSURANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 6, "assurance": "ACTIVE ASSURANCE", "assurance_norm": "ACTIVE ASSURANCE", "assistance": "INTER PARTNER ASSISTANCE", "assistance_norm": "INTER PARTNER ASSISTANCE", "maj_hlpy": false}, {"id": 7, "assurance": "ADA LOCATION", "assurance_norm": "ADA LOCATION", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 8, "assurance": "ADAC", "assurance_norm": "ADAC", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 9, "assurance": "ADAC Allemagne", "assurance_norm": "ADAC ALLEMAGNE", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 10, "assurance": "AGPM", "assurance_norm": "AGPM", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 11, "assurance": "ALD ASSISTANCE", "assurance_norm": "ALD ASSISTANCE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 12, "assurance": "ALD AUTOMOTIVE", "assurance_norm": "ALD AUTOMOTIVE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 13, "assurance": "ALLIANZ", "assurance_norm": "ALLIANZ", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 14, "assurance": "ALPHABET", "assurance_norm": "ALPHABET", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 15, "assurance": "AMAGUIZ", "assurance_norm": "AMAGUIZ", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 16, "assurance": "AMALINE", "assurance_norm": "AMALINE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 17, "assurance": "AMV", "assurance_norm": "AMV", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 18, "assurance": "ANWB", "assurance_norm": "ANWB", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 19, "assurance": "AON", "assurance_norm": "AON", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 20, "assurance": "APRIL ASSISTANCE / CORIS", "assurance_norm": "APRIL ASSISTANCE CORIS", "assistance": "APRIL ASSISTANCE / CORIS", "assistance_norm": "APRIL ASSISTANCE CORIS", "maj_hlpy": false}, {"id": 21, "assurance": "APRIL ASSURANCE", "assurance_norm": "APRIL ASSURANCE", "assistance": "IPA", "assistance_norm": "IPA", "maj_hlpy": false}, {"id": 22, "assurance": "AREAS", "assurance_norm": "AREAS", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 23, "assurance": "ARISA", "assurance_norm": "ARISA", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 24, "assurance": "ARVAL", "assurance_norm": "ARVAL", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 25, "assurance": "ARVAL (bis)", "assurance_norm": "ARVAL BIS", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 26, "assurance": "ASSU 2000 / COVEA RISKS", "assurance_norm": "ASSU 2000 COVEA RISKS", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 27, "assurance": "ASSUR PEOPLE", "assurance_norm": "ASSUR PEOPLE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 28, "assurance": "Assurance Gens Du Voyage", "assurance_norm": "ASSURANCE GENS DU VOYAGE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 29, "assurance": "ASSUREO", "assurance_norm": "ASSUREO", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 30, "assurance": "ASSURONE", "assurance_norm": "ASSURONE", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 31, "assurance": "ASSURONLINE", "assurance_norm": "ASSURONLINE", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 32, "assurance": "ATHLON", "assurance_norm": "ATHLON", "assistance": "ATHLON", "assistance_norm": "ATHLON", "maj_hlpy": false}, {"id": 33, "assurance": "AUCHAN", "assurance_norm": "AUCHAN", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 34, "assurance": "AUDI ASSURANCE (garantie constructeur)", "assurance_norm": "AUDI ASSURANCE GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 35, "assurance": "AUTOFIRST", "assurance_norm": "AUTOFIRST", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 36, "assurance": "AUTOMOBILE CLUB LUXEMBOURGOIS", "assurance_norm": "AUTOMOBILE CLUB LUXEMBOURGOIS", "assistance": "ACL", "assistance_norm": "ACL", "maj_hlpy": false}, {"id": 37, "assurance": "Automobile Club Medical de France (ACMF)", "assurance_norm": "AUTOMOBILE CLUB MEDICAL DE FRANCE ACMF", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 38, "assurance": "AVIS", "assurance_norm": "AVIS", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 39, "assurance": "AVIVA", "assurance_norm": "AVIVA", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 40, "assurance": "AXA", "assurance_norm": "AXA", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 41, "assurance": "AXA ENTREPRISE", "assurance_norm": "AXA ENTREPRISE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 42, "assurance": "Axa Service Technique International", "assurance_norm": "AXA SERVICE TECHNIQUE INTERNATIONAL", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 43, "assurance": "AXA VERSICHERUNGEN (ch)", "assurance_norm": "AXA VERSICHERUNGEN CH", "assistance": "AXA WINTERTHUR", "assistance_norm": "AXA WINTERTHUR", "maj_hlpy": false}, {"id": 44, "assurance": "AXA WINTERTHUR (ch)", "assurance_norm": "AXA WINTERTHUR CH", "assistance": "AXA WINTERTHUR", "assistance_norm": "AXA WINTERTHUR", "maj_hlpy": false}, {"id": 45, "assurance": "AXERIA", "assurance_norm": "AXERIA", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 46, "assurance": "AXERIA DECLIC AUTO", "assurance_norm": "AXERIA DECLIC AUTO", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 47, "assurance": "BALCIA INSURANCE SE", "assurance_norm": "BALCIA INSURANCE SE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 48, "assurance": "BANQUE POPULAIRE", "assurance_norm": "BANQUE POPULAIRE", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 49, "assurance": "BANQUE POSTALE", "assurance_norm": "BANQUE POSTALE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 50, "assurance": "BESSE ASSURANCE", "assurance_norm": "BESSE ASSURANCE", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 51, "assurance": "BNP PARIBAS", "assurance_norm": "BNP PARIBAS", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 52, "assurance": "BPCE", "assurance_norm": "BPCE", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 53, "assurance": "BRED ASSURANCE", "assurance_norm": "BRED ASSURANCE", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 54, "assurance": "CAISSE D'EPARGNE", "assurance_norm": "CAISSE D EPARGNE", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 55, "assurance": "CAISSE MUTUELLE MARNAISE ASSURANCE", "assurance_norm": "CAISSE MUTUELLE MARNAISE ASSURANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 56, "assurance": "CARDIF", "assurance_norm": "CARDIF", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 57, "assurance": "CARMA", "assurance_norm": "CARMA", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 58, "assurance": "CENTRAAL BEHEER (NL)", "assurance_norm": "CENTRAAL BEHEER NL", "assistance": "EUROCROSS ASSISTANCE", "assistance_norm": "EUROCROSS ASSISTANCE", "maj_hlpy": false}, {"id": 59, "assurance": "CENTRALE INTERVENTION ETI (SUISSE)", "assurance_norm": "CENTRALE INTERVENTION ETI SUISSE", "assistance": "CENTRALE INTERVENTION ETI", "assistance_norm": "CENTRALE INTERVENTION ETI", "maj_hlpy": false}, {"id": 60, "assurance": "CITROEN ASSURANCE", "assurance_norm": "CITROEN ASSURANCE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 61, "assurance": "COVEA FLEET", "assurance_norm": "COVEA FLEET", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 62, "assurance": "COVEA RISKS", "assurance_norm": "COVEA RISKS", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 63, "assurance": "CUPRA ASSURANCE (garantie constructeur)", "assurance_norm": "CUPRA ASSURANCE GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 64, "assurance": "DAF (garantie constructeur)", "assurance_norm": "DAF GARANTIE CONSTRUCTEUR", "assistance": "DAF", "assistance_norm": "DAF", "maj_hlpy": true}, {"id": 65, "assurance": "DIAC LOCATION", "assurance_norm": "DIAC LOCATION", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 66, "assurance": "DIOT", "assurance_norm": "DIOT", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 67, "assurance": "DIRECT ASSURANCE", "assurance_norm": "DIRECT ASSURANCE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 68, "assurance": "DRIVY LOCATION", "assurance_norm": "DRIVY LOCATION", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 69, "assurance": "ECA ASSURANCE", "assurance_norm": "ECA ASSURANCE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 70, "assurance": "EURALPHA", "assurance_norm": "EURALPHA", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 71, "assurance": "EURO ASSURANCE", "assurance_norm": "EURO ASSURANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 72, "assurance": "EUROFIL", "assurance_norm": "EUROFIL", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 73, "assurance": "EUROMASTER GARANTIE SERENITE +", "assurance_norm": "EUROMASTER GARANTIE SERENITE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 74, "assurance": "EUROP", "assurance_norm": "EUROP", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 75, "assurance": "EUROP SUISSE", "assurance_norm": "EUROP SUISSE", "assistance": "EUROP SUISSE", "assistance_norm": "EUROP SUISSE", "maj_hlpy": false}, {"id": 76, "assurance": "EUROPCAR VL", "assurance_norm": "EUROPCAR VL", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 77, "assurance": "EUROPCAR VU", "assurance_norm": "EUROPCAR VU", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 78, "assurance": "FATEC", "assurance_norm": "FATEC", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 79, "assurance": "FBA ASSURANCE", "assurance_norm": "FBA ASSURANCE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 80, "assurance": "FIDELIA", "assurance_norm": "FIDELIA", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 81, "assurance": "FMA RISK", "assurance_norm": "FMA RISK", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 82, "assurance": "FRANCE CAR LOCATION", "assurance_norm": "FRANCE CAR LOCATION", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 83, "assurance": "FRANCE TELECOM", "assurance_norm": "FRANCE TELECOM", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 84, "assurance": "FRANCOIS BERNARD AUTOMOBILES", "assurance_norm": "FRANCOIS BERNARD AUTOMOBILES", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 85, "assurance": "GAN ASSURANCE", "assurance_norm": "GAN ASSURANCE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 86, "assurance": "GAN EUROCOURTAGE", "assurance_norm": "GAN EUROCOURTAGE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 87, "assurance": "GARANTIE ASSISTANCE", "assurance_norm": "GARANTIE ASSISTANCE", "assistance": "GARANTIE ASSISTANCE", "assistance_norm": "GARANTIE ASSISTANCE", "maj_hlpy": false}, {"id": 88, "assurance": "Garantie Viaxcel", "assurance_norm": "GARANTIE VIAXCEL", "assistance": "I'Care / Europ", "assistance_norm": "I CARE EUROP", "maj_hlpy": false}, {"id": 89, "assurance": "GENERAL ELECTRIC FLEET", "assurance_norm": "GENERAL ELECTRIC FLEET", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 90, "assurance": "GENERALI", "assurance_norm": "GENERALI", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 91, "assurance": "GI2A", "assurance_norm": "GI2A", "assistance": "IPA", "assistance_norm": "IPA", "maj_hlpy": false}, {"id": 92, "assurance": "GMAC", "assurance_norm": "GMAC", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 93, "assurance": "GMF", "assurance_norm": "GMF", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 94, "assurance": "GROUPAMA", "assurance_norm": "GROUPAMA", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 95, "assurance": "GROUPE CAISSE D'EPARGNE CAR LEASE", "assurance_norm": "GROUPE CAISSE D EPARGNE CAR LEASE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 96, "assurance": "HERTZ ASSISTANCE", "assurance_norm": "HERTZ ASSISTANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 97, "assurance": "ICARE", "assurance_norm": "ICARE", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 98, "assurance": "IDENTICAR", "assurance_norm": "IDENTICAR", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 99, "assurance": "IMA", "assurance_norm": "IMA", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 100, "assurance": "ING", "assurance_norm": "ING", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 101, "assurance": "INTERMARCHE ASSISTANCE", "assurance_norm": "INTERMARCHE ASSISTANCE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 102, "assurance": "IVECO (garantie constructeur)", "assurance_norm": "IVECO GARANTIE CONSTRUCTEUR", "assistance": "IVECO", "assistance_norm": "IVECO", "maj_hlpy": true}, {"id": 103, "assurance": "L'OLIVIER ASSURANCE", "assurance_norm": "L OLIVIER ASSURANCE", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 104, "assurance": "LA BANQUE POSTALE", "assurance_norm": "LA BANQUE POSTALE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 105, "assurance": "LA MEDICALE", "assurance_norm": "LA MEDICALE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 106, "assurance": "LA POSTE ASSURANCE", "assurance_norm": "LA POSTE ASSURANCE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 107, "assurance": "LEASPLAN", "assurance_norm": "LEASPLAN", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 108, "assurance": "LIBEA", "assurance_norm": "LIBEA", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 109, "assurance": "LYBERNET", "assurance_norm": "LYBERNET", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 110, "assurance": "MAAF", "assurance_norm": "MAAF", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 111, "assurance": "MACIF", "assurance_norm": "MACIF", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 112, "assurance": "MACSF", "assurance_norm": "MACSF", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 113, "assurance": "MAIF", "assurance_norm": "MAIF", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 114, "assurance": "MAPA", "assurance_norm": "MAPA", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 115, "assurance": "MAPFRE", "assurance_norm": "MAPFRE", "assistance": "MAPFRE", "assistance_norm": "MAPFRE", "maj_hlpy": false}, {"id": 116, "assurance": "MATMUT", "assurance_norm": "MATMUT", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 117, "assurance": "MAXANCE / L'EQUITE", "assurance_norm": "MAXANCE L EQUITE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 118, "assurance": "MEDICALL (SUISSE)", "assurance_norm": "MEDICALL SUISSE", "assistance": "MEDICALL", "assistance_norm": "MEDICALL", "maj_hlpy": false}, {"id": 119, "assurance": "MERCEDES ASSURANCE", "assurance_norm": "MERCEDES ASSURANCE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 120, "assurance": "MERCEDES-BENZ (garantie constructeur)", "assurance_norm": "MERCEDES BENZ GARANTIE CONSTRUCTEUR", "assistance": "MERCEDES", "assistance_norm": "MERCEDES", "maj_hlpy": true}, {"id": 121, "assurance": "MMA", "assurance_norm": "MMA", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 122, "assurance": "MONCEAU ASSURANCE", "assurance_norm": "MONCEAU ASSURANCE", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 123, "assurance": "MONDIAL", "assurance_norm": "MONDIAL", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 124, "assurance": "MUTUAIDE", "assurance_norm": "MUTUAIDE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 125, "assurance": "MUTUELLE DE POITIER", "assurance_norm": "MUTUELLE DE POITIER", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 126, "assurance": "MUTUELLE SAINT CHRISTOPHE", "assurance_norm": "MUTUELLE SAINT CHRISTOPHE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 127, "assurance": "NATIONAL CITER", "assurance_norm": "NATIONAL CITER", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 128, "assurance": "NCI INSURANCE (ANGLAIS)", "assurance_norm": "NCI INSURANCE ANGLAIS", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 129, "assurance": "NETVOX", "assurance_norm": "NETVOX", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 130, "assurance": "NEXX", "assurance_norm": "NEXX", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 131, "assurance": "NOVEA ASSISTANCE", "assurance_norm": "NOVEA ASSISTANCE", "assistance": "NOVEA ASSISTANCE", "assistance_norm": "NOVEA ASSISTANCE", "maj_hlpy": false}, {"id": 132, "assurance": "NOVELIA", "assurance_norm": "NOVELIA", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 133, "assurance": "OPTEVEN", "assurance_norm": "OPTEVEN", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 134, "assurance": "OPTEVEN GARANTIE", "assurance_norm": "OPTEVEN GARANTIE", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 135, "assurance": "OUI CAR LOCATION", "assurance_norm": "OUI CAR LOCATION", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 136, "assurance": "PACIFICA", "assurance_norm": "PACIFICA", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 137, "assurance": "PARCOURS", "assurance_norm": "PARCOURS", "assistance": "ACTA", "assistance_norm": "ACTA", "maj_hlpy": false}, {"id": 138, "assurance": "PEUGEOT ASSURANCE", "assurance_norm": "PEUGEOT ASSURANCE", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 139, "assurance": "PROGEAS / EURODOMMAGES", "assurance_norm": "PROGEAS EURODOMMAGES", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 140, "assurance": "PROTEC BTP", "assurance_norm": "PROTEC BTP", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 141, "assurance": "QUATTRO ASSURANCE", "assurance_norm": "QUATTRO ASSURANCE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 142, "assurance": "RAC UK", "assurance_norm": "RAC UK", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 143, "assurance": "RENAULT (garantie constructeur)", "assurance_norm": "RENAULT GARANTIE CONSTRUCTEUR", "assistance": "RENAULT ASSISTANCE", "assistance_norm": "RENAULT ASSISTANCE", "maj_hlpy": true}, {"id": 144, "assurance": "RENAULT ASSURANCE AMALINE", "assurance_norm": "RENAULT ASSURANCE AMALINE", "assistance": "MUTUAIDE", "assistance_norm": "MUTUAIDE", "maj_hlpy": false}, {"id": 145, "assurance": "RENAULT TRUCKS (garantie constructeur)", "assurance_norm": "RENAULT TRUCKS GARANTIE CONSTRUCTEUR", "assistance": "RENAULT TRUCKS", "assistance_norm": "RENAULT TRUCKS", "maj_hlpy": true}, {"id": 146, "assurance": "Rend And Drop Location", "assurance_norm": "REND AND DROP LOCATION", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 147, "assurance": "RENT ALL", "assurance_norm": "RENT ALL", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 148, "assurance": "RENT@CAR", "assurance_norm": "RENTCAR", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 149, "assurance": "SADA", "assurance_norm": "SADA", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 150, "assurance": "SAGA", "assurance_norm": "SAGA", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 151, "assurance": "SATEC", "assurance_norm": "SATEC", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 152, "assurance": "SAVE", "assurance_norm": "SAVE", "assistance": "SAVE", "assistance_norm": "SAVE", "maj_hlpy": false}, {"id": 153, "assurance": "SCANIA (garantie constructeur)", "assurance_norm": "SCANIA GARANTIE CONSTRUCTEUR", "assistance": "SCANIA", "assistance_norm": "SCANIA", "maj_hlpy": true}, {"id": 154, "assurance": "SEAT ASSURANCE (garantie constructeur)", "assurance_norm": "SEAT ASSURANCE GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 155, "assurance": "SIXT LOCATION", "assurance_norm": "SIXT LOCATION", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 156, "assurance": "SKODA ASSURANCE (garantie constructeur)", "assurance_norm": "SKODA ASSURANCE GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 157, "assurance": "SMA SAGENA", "assurance_norm": "SMA SAGENA", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 158, "assurance": "SMABTP", "assurance_norm": "SMABTP", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 159, "assurance": "SMACL", "assurance_norm": "SMACL", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 160, "assurance": "SOGESSUR", "assurance_norm": "SOGESSUR", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 161, "assurance": "SOLLY AZAR", "assurance_norm": "SOLLY AZAR", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 162, "assurance": "SUPER U", "assurance_norm": "SUPER U", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 163, "assurance": "SURAVENIR", "assurance_norm": "SURAVENIR", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 164, "assurance": "SWISSLIFE", "assurance_norm": "SWISSLIFE", "assistance": "GARANTIE ASSISTANCE", "assistance_norm": "GARANTIE ASSISTANCE", "maj_hlpy": false}, {"id": 165, "assurance": "THELEM", "assurance_norm": "THELEM", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 166, "assurance": "THEOREME / SAGENA", "assurance_norm": "THEOREME SAGENA", "assistance": "FIDELIA", "assistance_norm": "FIDELIA", "maj_hlpy": false}, {"id": 167, "assurance": "TOTALMOBIL (SUISSE)", "assurance_norm": "TOTALMOBIL SUISSE", "assistance": "AXA WINTERTHUR", "assistance_norm": "AXA WINTERTHUR", "maj_hlpy": false}, {"id": 168, "assurance": "TOURING CLUB BELGE / TCB", "assurance_norm": "TOURING CLUB BELGE TCB", "assistance": "TOURING CLUB BELGE / TCB", "assistance_norm": "TOURING CLUB BELGE TCB", "maj_hlpy": false}, {"id": 169, "assurance": "TOURING CLUB SUISSE / TCS", "assurance_norm": "TOURING CLUB SUISSE TCS", "assistance": "TOURING CLUB SUISSE / TCS", "assistance_norm": "TOURING CLUB SUISSE TCS", "maj_hlpy": false}, {"id": 170, "assurance": "TOYOTA ASSURANCE", "assurance_norm": "TOYOTA ASSURANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 171, "assurance": "U CAR ASSISTANCE", "assurance_norm": "U CAR ASSISTANCE", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 172, "assurance": "VAB Belgique", "assurance_norm": "VAB BELGIQUE", "assistance": "VAB Belgique", "assistance_norm": "VAB BELGIQUE", "maj_hlpy": false}, {"id": 173, "assurance": "VERSPIEREN", "assurance_norm": "VERSPIEREN", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 174, "assurance": "VOLKSWAGEN ASSURANCE (garantie constructeur)", "assurance_norm": "VOLKSWAGEN ASSURANCE GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 175, "assurance": "VOLKSWAGEN UTILITAIRES (garantie constructeur)", "assurance_norm": "VOLKSWAGEN UTILITAIRES GARANTIE CONSTRUCTEUR", "assistance": "HLPY", "assistance_norm": "HLPY", "maj_hlpy": true}, {"id": 176, "assurance": "VOLVO (garantie constructeur)", "assurance_norm": "VOLVO GARANTIE CONSTRUCTEUR", "assistance": "VOLVO", "assistance_norm": "VOLVO", "maj_hlpy": true}, {"id": 177, "assurance": "WAZARI ASSURANCE", "assurance_norm": "WAZARI ASSURANCE", "assistance": "IPA", "assistance_norm": "IPA", "maj_hlpy": false}, {"id": 178, "assurance": "WECOVER", "assurance_norm": "WECOVER", "assistance": "IMA", "assistance_norm": "IMA", "maj_hlpy": false}, {"id": 179, "assurance": "XENASSUR", "assurance_norm": "XENASSUR", "assistance": "EUROP", "assistance_norm": "EUROP", "maj_hlpy": false}, {"id": 180, "assurance": "XYLASSUR", "assurance_norm": "XYLASSUR", "assistance": "AXA", "assistance_norm": "AXA", "maj_hlpy": false}, {"id": 181, "assurance": "YOU ASSUR", "assurance_norm": "YOU ASSUR", "assistance": "OPTEVEN", "assistance_norm": "OPTEVEN", "maj_hlpy": false}, {"id": 182, "assurance": "ZEPHIR", "assurance_norm": "ZEPHIR", "assistance": "MONDIAL", "assistance_norm": "MONDIAL", "maj_hlpy": false}, {"id": 183, "assurance": "ZURICH", "assurance_norm": "ZURICH", "assistance": "ZURICH", "assistance_norm": "ZURICH", "maj_hlpy": false}]}
+;
+const KEY_ENTRIES = 'fereol_assurance_entries';
+const KEY_ASSISTEURS = 'fereol_assisteurs';
+
+let entries = [];
+let assisteurs = [];
+let editingEntryId = null;
+let editingAssisteurKey = null;
+
+function normalize(str) {
+  return (str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+}
+function escapeHtml(str) {
+  const d = document.createElement('div'); d.textContent = str; return d.innerHTML;
+}
+function telHref(phone) {
+  return 'tel:' + phone.replace(/[^\d+]/g, '');
+}
+
+function loadData() {
+  try {
+    const e = localStorage.getItem(KEY_ENTRIES);
+    entries = e ? JSON.parse(e) : SEED.entries.slice();
+  } catch (err) { entries = SEED.entries.slice(); }
+  try {
+    const a = localStorage.getItem(KEY_ASSISTEURS);
+    assisteurs = a ? JSON.parse(a) : SEED.assisteurs.slice();
+  } catch (err) { assisteurs = SEED.assisteurs.slice(); }
+  persistEntries(); persistAssisteurs();
+  sortAll();
+}
+
+function sortAll() {
+  entries.sort((x, y) => x.assurance.toUpperCase().localeCompare(y.assurance.toUpperCase()));
+  assisteurs.sort((x, y) => x.label.toUpperCase().localeCompare(y.label.toUpperCase()));
+}
+
+function persistEntries() {
+  try { localStorage.setItem(KEY_ENTRIES, JSON.stringify(entries)); flashStatus('statusA', 'Enregistré ✓'); }
+  catch (err) { flashStatus('statusA', 'Erreur d\'enregistrement local'); }
+}
+function persistAssisteurs() {
+  try { localStorage.setItem(KEY_ASSISTEURS, JSON.stringify(assisteurs)); flashStatus('statusB', 'Enregistré ✓'); }
+  catch (err) { flashStatus('statusB', 'Erreur d\'enregistrement local'); }
+}
+function flashStatus(id, msg) {
+  const el = document.getElementById(id);
+  el.textContent = msg;
+  setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 1500);
+}
+
+function findAssisteur(assistanceValue) {
+  const n = normalize(assistanceValue);
+  return assisteurs.find(a => normalize(a.key) === n) || null;
+}
+
+// ---------------- TABS ----------------
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// ---------------- ASSURANCES PANEL ----------------
+const searchA = document.getElementById('searchA');
+const resultsA = document.getElementById('resultsA');
+const countA = document.getElementById('countA');
+
+function searchEntries(q) {
+  const n = normalize(q.trim());
+  if (!n) return entries;
+  const starts = [];
+  const contains = [];
+  entries.forEach(e => {
+    const an = normalize(e.assurance);
+    if (an.startsWith(n)) starts.push(e);
+    else if (an.includes(n) || normalize(e.assistance).includes(n)) contains.push(e);
+  });
+  return starts.concat(contains);
+}
+
+function renderA(list) {
+  resultsA.innerHTML = '';
+  countA.textContent = list.length + ' résultat' + (list.length !== 1 ? 's' : '') + (searchA.value.trim() === '' ? ' (tous)' : '');
+  if (list.length === 0) { resultsA.innerHTML = '<div class="empty">Aucune entrée trouvée.</div>'; return; }
+  const frag = document.createDocumentFragment();
+  list.forEach(item => {
+    const row = document.createElement('div');
+    row.className = 'row';
+    const ass = findAssisteur(item.assistance);
+
+    if (editingEntryId === item.id) {
+      row.innerHTML = `
+        <div class="edit-form">
+          <div class="edit-fields">
+            <input type="text" id="editAssurance" value="${escapeHtml(item.assurance)}">
+            <input type="text" id="editAssistance" value="${escapeHtml(item.assistance)}">
+          </div>
+          <div class="edit-actions">
+            <button class="btn-secondary" data-action="cancel-edit-a">Annuler</button>
+            <button class="btn-primary" data-action="save-edit-a" data-id="${item.id}">Enregistrer</button>
+          </div>
+        </div>`;
+    } else {
+      const badgeColor = ass ? ass.color : '#9a978a';
+      const badgeText = ass ? ass.initials : item.assistance.slice(0,3).toUpperCase();
+      const assistLabel = ass ? ass.label : item.assistance;
+      const phoneHtml = ass && ass.phone
+        ? `<a class="phone-link" href="${telHref(ass.phone)}">${escapeHtml(ass.phone)}</a>`
+        : `<span class="no-phone">n° à ajouter</span>`;
+      row.innerHTML = `
+        <div class="row-top">
+          <div class="assurance">${escapeHtml(item.assurance)}</div>
+          <div class="row-icons">
+            <button class="icon-btn" data-action="edit-a" data-id="${item.id}" title="Modifier">✎</button>
+            <button class="icon-btn" data-action="delete-a" data-id="${item.id}" title="Supprimer">✕</button>
+          </div>
+        </div>
+        <div class="assist-chip">
+          <div class="badge" style="background:${badgeColor}">${badgeText}</div>
+          <div class="assist-info">
+            <div class="assist-name">${escapeHtml(assistLabel)}</div>
+            ${phoneHtml}
+          </div>
+        </div>`;
+    }
+    frag.appendChild(row);
+  });
+  resultsA.appendChild(frag);
+}
+
+resultsA.addEventListener('click', (e) => {
+  const btn = e.target.closest('button'); if (!btn) return;
+  const action = btn.dataset.action;
+  const id = btn.dataset.id ? parseInt(btn.dataset.id) : null;
+  if (action === 'edit-a') { editingEntryId = id; renderA(searchEntries(searchA.value)); }
+  else if (action === 'cancel-edit-a') { editingEntryId = null; renderA(searchEntries(searchA.value)); }
+  else if (action === 'save-edit-a') {
+    const na = document.getElementById('editAssurance').value.trim();
+    const ni = document.getElementById('editAssistance').value.trim();
+    if (!na || !ni) return;
+    const idx = entries.findIndex(x => x.id === id);
+    if (idx !== -1) { entries[idx].assurance = na; entries[idx].assistance = ni; }
+    editingEntryId = null; sortAll(); persistEntries(); renderA(searchEntries(searchA.value));
+  } else if (action === 'delete-a') {
+    if (!confirm('Supprimer cette entrée ?')) return;
+    entries = entries.filter(x => x.id !== id);
+    persistEntries(); renderA(searchEntries(searchA.value));
+  }
+});
+
+searchA.addEventListener('input', () => renderA(searchEntries(searchA.value)));
+
+document.getElementById('btnToggleAddA').addEventListener('click', () => {
+  document.getElementById('addPanelA').classList.toggle('open');
+});
+document.getElementById('btnCancelAddA').addEventListener('click', () => {
+  document.getElementById('newAssurance').value = '';
+  document.getElementById('newAssistance').value = '';
+  document.getElementById('addPanelA').classList.remove('open');
+});
+document.getElementById('btnSaveAddA').addEventListener('click', () => {
+  const a = document.getElementById('newAssurance').value.trim();
+  const b = document.getElementById('newAssistance').value.trim();
+  if (!a || !b) { alert('Merci de remplir les deux champs.'); return; }
+  const nextId = entries.reduce((m, e) => Math.max(m, e.id), 0) + 1;
+  entries.push({ id: nextId, assurance: a, assistance: b, maj_hlpy: false });
+  document.getElementById('newAssurance').value = '';
+  document.getElementById('newAssistance').value = '';
+  document.getElementById('addPanelA').classList.remove('open');
+  sortAll(); persistEntries(); renderA(searchEntries(searchA.value));
+});
+document.getElementById('btnResetA').addEventListener('click', () => {
+  if (!confirm('Cela remplacera toutes vos modifications par les données d\'origine. Continuer ?')) return;
+  entries = SEED.entries.slice(); sortAll(); persistEntries(); renderA(searchEntries(searchA.value));
+});
+
+// ---------------- ASSISTEURS PANEL ----------------
+const searchB = document.getElementById('searchB');
+const resultsB = document.getElementById('resultsB');
+const countB = document.getElementById('countB');
+
+function searchAssisteurs(q) {
+  const n = normalize(q.trim());
+  if (!n) return assisteurs;
+  const starts = [];
+  const contains = [];
+  assisteurs.forEach(a => {
+    const ln = normalize(a.label);
+    if (ln.startsWith(n)) starts.push(a);
+    else if (ln.includes(n) || normalize(a.key).includes(n) || (a.phone||'').includes(q.trim())) contains.push(a);
+  });
+  return starts.concat(contains);
+}
+
+function renderB(list) {
+  resultsB.innerHTML = '';
+  countB.textContent = list.length + ' assisteur' + (list.length !== 1 ? 's' : '') + (searchB.value.trim() === '' ? ' (tous)' : '');
+  if (list.length === 0) { resultsB.innerHTML = '<div class="empty">Aucun assisteur trouvé.</div>'; return; }
+  const frag = document.createDocumentFragment();
+  list.forEach(item => {
+    const row = document.createElement('div');
+    row.className = 'row';
+
+    if (editingAssisteurKey === item.key) {
+      row.innerHTML = `
+        <div class="edit-form">
+          <div class="edit-fields">
+            <input type="text" id="editLabel" value="${escapeHtml(item.label)}">
+            <input type="text" id="editPhone" value="${escapeHtml(item.phone || '')}">
+          </div>
+          <div class="edit-actions">
+            <button class="btn-secondary" data-action="cancel-edit-b">Annuler</button>
+            <button class="btn-primary" data-action="save-edit-b" data-key="${escapeHtml(item.key)}">Enregistrer</button>
+          </div>
+        </div>`;
+    } else {
+      const phoneHtml = item.phone
+        ? `<a class="phone-link" href="${telHref(item.phone)}">${escapeHtml(item.phone)}</a>`
+        : `<span class="no-phone">n° à ajouter</span>`;
+      row.innerHTML = `
+        <div class="row-top">
+          <div class="assurance">${escapeHtml(item.label)}</div>
+          <div class="row-icons">
+            <button class="icon-btn" data-action="edit-b" data-key="${escapeHtml(item.key)}" title="Modifier">✎</button>
+            <button class="icon-btn" data-action="delete-b" data-key="${escapeHtml(item.key)}" title="Supprimer">✕</button>
+          </div>
+        </div>
+        <div class="assist-chip">
+          <div class="badge" style="background:${item.color || '#9a978a'}">${escapeHtml(item.initials || item.key.slice(0,3))}</div>
+          <div class="assist-info">
+            ${phoneHtml}
+          </div>
+        </div>`;
+    }
+    frag.appendChild(row);
+  });
+  resultsB.appendChild(frag);
+}
+
+resultsB.addEventListener('click', (e) => {
+  const btn = e.target.closest('button'); if (!btn) return;
+  const action = btn.dataset.action;
+  const key = btn.dataset.key;
+  if (action === 'edit-b') { editingAssisteurKey = key; renderB(searchAssisteurs(searchB.value)); }
+  else if (action === 'cancel-edit-b') { editingAssisteurKey = null; renderB(searchAssisteurs(searchB.value)); }
+  else if (action === 'save-edit-b') {
+    const nl = document.getElementById('editLabel').value.trim();
+    const np = document.getElementById('editPhone').value.trim();
+    if (!nl) return;
+    const idx = assisteurs.findIndex(x => x.key === key);
+    if (idx !== -1) { assisteurs[idx].label = nl; assisteurs[idx].phone = np; }
+    editingAssisteurKey = null; sortAll(); persistAssisteurs(); renderB(searchAssisteurs(searchB.value)); renderA(searchEntries(searchA.value));
+  } else if (action === 'delete-b') {
+    if (!confirm('Supprimer cet assisteur de l\'annuaire ?')) return;
+    assisteurs = assisteurs.filter(x => x.key !== key);
+    persistAssisteurs(); renderB(searchAssisteurs(searchB.value)); renderA(searchEntries(searchA.value));
+  }
+});
+
+searchB.addEventListener('input', () => renderB(searchAssisteurs(searchB.value)));
+
+document.getElementById('btnToggleAddB').addEventListener('click', () => {
+  document.getElementById('addPanelB').classList.toggle('open');
+});
+document.getElementById('btnCancelAddB').addEventListener('click', () => {
+  document.getElementById('newLabel').value = '';
+  document.getElementById('newKey').value = '';
+  document.getElementById('newPhone').value = '';
+  document.getElementById('addPanelB').classList.remove('open');
+});
+document.getElementById('btnSaveAddB').addEventListener('click', () => {
+  const label = document.getElementById('newLabel').value.trim();
+  const key = document.getElementById('newKey').value.trim();
+  const phone = document.getElementById('newPhone').value.trim();
+  if (!label || !key) { alert('Merci de remplir au moins le nom et la clé courte.'); return; }
+  if (assisteurs.some(a => normalize(a.key) === normalize(key))) { alert('Cette clé existe déjà.'); return; }
+  const palette = ['#1f7a6c','#c0392b','#00008f','#1a3a6b','#2c4b9b','#2e8b3d','#8a6d3b','#b3121b','#3fae4a','#233a66'];
+  const color = palette[assisteurs.length % palette.length];
+  assisteurs.push({ key, label, phone, initials: key.slice(0,3).toUpperCase(), color });
+  document.getElementById('newLabel').value = '';
+  document.getElementById('newKey').value = '';
+  document.getElementById('newPhone').value = '';
+  document.getElementById('addPanelB').classList.remove('open');
+  sortAll(); persistAssisteurs(); renderB(searchAssisteurs(searchB.value));
+});
+document.getElementById('btnResetB').addEventListener('click', () => {
+  if (!confirm('Cela remplacera toutes vos modifications par les données d\'origine. Continuer ?')) return;
+  assisteurs = SEED.assisteurs.slice(); sortAll(); persistAssisteurs(); renderB(searchAssisteurs(searchB.value)); renderA(searchEntries(searchA.value));
+});
+
+// ---------------- INIT ----------------
+loadData();
+renderA(entries);
+renderB(assisteurs);
+</script>
+</body>
+</html>
